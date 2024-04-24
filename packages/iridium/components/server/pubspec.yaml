@@ -12,13 +12,25 @@ dependencies:
   flutter:
     sdk: flutter
   mno_commons:
-    path: ../commons
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/commons
   mno_shared:
-    path: ../shared
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/shared
   mno_streamer:
-    path: ../streamer
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/streamer
   mno_webview:
-    path: ../webview
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/webview
   bloc: ^8.1.2
   dartx: ^1.1.0
   dfunc: ^0.9.0

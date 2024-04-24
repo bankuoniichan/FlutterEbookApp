@@ -15,9 +15,15 @@ dependencies:
   universal_io: ^2.2.1
   xml: ^6.3.0
   mno_commons:
-    path: ../commons
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/commons
   mno_shared:
-    path: ../shared
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/shared
 
 dev_dependencies:
   lints: ^2.1.0

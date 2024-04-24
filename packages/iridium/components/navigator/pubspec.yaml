@@ -25,15 +25,30 @@ dependencies:
   universal_io: ^2.2.1
 
   mno_commons:
-    path: ../commons
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/commons
   mno_server:
-    path: ../server
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/server
   mno_shared:
-    path: ../shared
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/shared
   mno_streamer:
-    path: ../streamer
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/streamer
   mno_webview:
-    path: ../webview
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/webview
 
 dev_dependencies:
   test: ^1.24.3

@@ -12,19 +12,40 @@ dependencies:
   flutter:
     sdk: flutter
   mno_commons:
-    path: ../components/commons
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/commons
   mno_navigator:
-    path: ../components/navigator
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/navigator
   mno_opds:
-    path: ../components/opds
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/opds
   mno_server:
-    path: ../components/server
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/server
   mno_shared:
-    path: ../components/shared
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/shared
   mno_streamer:
-    path: ../components/streamer
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/streamer
   mno_webview:
-    path: ../components/webview
+    git:
+      url: https://github.com/bankuoniichan/FlutterEbookApp.git
+      ref: "pub-0.0.1"
+      path: packages/iridium/components/webview
   #  cupertino_icons: ^1.0.5
   dartx: ^1.1.0
   dfunc: ^0.9.0
