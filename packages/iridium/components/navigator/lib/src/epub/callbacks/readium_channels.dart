@@ -148,11 +148,11 @@ class ReadiumChannels extends JavascriptChannels {
   bool handleFootnote(String targetElement) => true;
 
   void _onSwipeUp(List<dynamic> arguments) {
-    viewerSettingsBloc?.add(IncrFontSizeEvent());
+    // viewerSettingsBloc?.add(IncrFontSizeEvent());
   }
 
   void _onSwipeDown(List<dynamic> arguments) {
-    viewerSettingsBloc?.add(DecrFontSizeEvent());
+    // viewerSettingsBloc?.add(DecrFontSizeEvent());
   }
 
   void _scrollRight(bool animated) {
