@@ -39,7 +39,7 @@ class AnnotationsPanelState extends State<AnnotationsPanel> {
     String? text = locator?.text.highlight;
     return Material(
       child: ListTile(
-        title: Text(title ?? text ?? ""),
+        title: Text(title ?? text ?? readerAnnotation.id),
         onTap: () => _onTap(readerAnnotation),
       ),
     );
