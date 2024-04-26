@@ -14,37 +14,37 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/commons
   mno_navigator:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/navigator
   mno_opds:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/opds
   mno_server:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/server
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/shared
   mno_streamer:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/streamer
   mno_webview:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/webview
   #  cupertino_icons: ^1.0.5
   dartx: ^1.1.0

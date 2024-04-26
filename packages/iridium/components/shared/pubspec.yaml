@@ -24,7 +24,7 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/commons
   path: ^1.8.3
 

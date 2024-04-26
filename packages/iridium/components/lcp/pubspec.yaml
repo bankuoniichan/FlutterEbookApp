@@ -29,12 +29,12 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/commons
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.2"
+      ref: "pub-0.0.4"
       path: packages/iridium/components/shared
 
 dependency_overrides:
