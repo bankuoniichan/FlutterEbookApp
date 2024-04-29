@@ -35,6 +35,18 @@ export default {
       value
     );
   },
+  onTopOverlayVisibilityChanged: function (value) {
+    window.flutter_inappwebview.callHandler(
+      "onTopOverlayVisibilityChanged",
+      value
+    );
+  },
+  onBottomOverlayVisibilityChanged: function (value) {
+    window.flutter_inappwebview.callHandler(
+      "onBottomOverlayVisibilityChanged",
+      value
+    );
+  },
   onSwipeDown: function (value) {
     window.flutter_inappwebview.callHandler("onSwipeDown", value);
   },

@@ -96,6 +96,15 @@ export function getColumnCountPerScreen() {
   );
 }
 
+export function isVerticalScrollEnabled() {
+  return (
+    document.documentElement.style
+      .getPropertyValue("--USER__verticalScroll")
+      .toString()
+      .trim() == "custom-vertical-scroll-on"
+  );
+}
+
 export function isScrollModeEnabled() {
   return (
     document.documentElement.style
@@ -169,7 +178,7 @@ function scrollToRect(rect) {
 
 export function scrollToStart() {
   // flutter.log("scrollToStart");
-  if (!isScrollModeEnabled()) {
+  if (!isScrollModeEnabled() && !isVerticalScrollEnabled()) {
     document.scrollingElement.scrollLeft = 0;
   } else {
     document.scrollingElement.scrollTop = 0;
@@ -179,7 +188,7 @@ export function scrollToStart() {
 
 export function scrollToEnd() {
   // flutter.log("scrollToEnd");
-  if (!isScrollModeEnabled()) {
+  if (!isScrollModeEnabled() && !isVerticalScrollEnabled()) {
     var factor = isRTL() ? -1 : 1;
     document.scrollingElement.scrollLeft = snapOffset(
       document.scrollingElement.scrollWidth * factor

@@ -30,7 +30,12 @@ class ReadiumThemeValues {
             ? "readium-advanced-on"
             : "readium-advanced-off",
         ReadiumCSSName.scroll.name:
-            readerTheme.scroll ? "readium-scroll-on" : "readium-scroll-off",
+            readerTheme.scroll || readerTheme.verticalScroll
+                ? "readium-scroll-on"
+                : "readium-scroll-off",
+        "--USER__verticalScroll": readerTheme.verticalScroll
+            ? "custom-vertical-scroll-on"
+            : "custom-vertical-scroll-off",
         ReadiumCSSName.fontOverride.name:
             (fontFamily != "inherit") ? "readium-font-on" : "readium-font-off",
         ReadiumCSSName.fontFamily.name: fontFamily,

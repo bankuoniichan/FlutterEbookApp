@@ -32,12 +32,24 @@ class EpubNavigator extends PublicationNavigator {
 class EpubNavigatorState extends PublicationNavigatorState<EpubNavigator> {
   EpubController get epubController => widget.epubController;
 
+  late final bool verticalScroll;
+
   double get verticalPadding =>
       MediaQuery.of(context).orientation == Orientation.portrait ? 40.0 : 20.0;
 
   @override
   EdgeInsets get readerPadding =>
       EdgeInsets.symmetric(vertical: verticalPadding);
+
+  @override
+  void initState() {
+    super.initState();
+    final _readerThemeBloc = BlocProvider.of<ReaderThemeBloc>(
+      context,
+      listen: false,
+    );
+    verticalScroll = _readerThemeBloc.state.readerTheme.verticalScroll;
+  }
 
   @override
   Widget build(BuildContext context) => MultiBlocProvider(
@@ -57,7 +69,7 @@ class EpubNavigatorState extends PublicationNavigatorState<EpubNavigator> {
   Widget buildReaderView(List<Link> spine, ServerStarted serverState) =>
       PreloadPageView.builder(
         controller: epubController.pageController,
-        scrollDirection: Axis.horizontal,
+        scrollDirection: verticalScroll ? Axis.vertical : Axis.horizontal,
         // TODO Currently, with Hybrid Composition activated, preloadPagesCount > 1 provides erratic behavior.
         // To investigate!
         // preloadPagesCount: min(spine.length, 2),

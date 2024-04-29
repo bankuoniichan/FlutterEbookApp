@@ -80,6 +80,7 @@ function createPaginationInfo(index, nbCols, nbThumbnails) {
 }
 
 var observers = [];
+var verticalEndListeners = [];
 var bookmarkIndexes = [];
 
 readium.setBookmarkIndexes = function (indexList) {
@@ -104,7 +105,13 @@ readium.initPagination = function () {
         observers[i].disconnect();
       }
     }
+    if (verticalEndListeners !== undefined) {
+      for (let i = 0; i < verticalEndListeners.length; i++) {
+        window.removeEventListener("scrollend", verticalEndListeners[i]);
+      }
+    }
     observers = [];
+    verticalEndListeners = [];
 
     let paginator = document.getElementById("readium_paginator");
     empty(paginator);
@@ -232,6 +239,25 @@ readium.initPagination = function () {
     //      let pageIndex = cfiNavigationLogic.getPageForElementId(elementId);
     //      xpub.elementIdsWithPageIndex.set(elementId, pageIndex);
     //    }
+    const verticalEndHandicap = 10;
+    function topEndListener() {
+      flutter.onTopOverlayVisibilityChanged(
+        window.scrollY <= verticalEndHandicap
+      );
+    }
+    function bottomEndListener() {
+      flutter.onBottomOverlayVisibilityChanged(
+        window.innerHeight + Math.round(window.scrollY) + verticalEndHandicap >=
+          document.body.offsetHeight
+      );
+    }
+    verticalEndListeners.push(topEndListener);
+    verticalEndListeners.push(bottomEndListener);
+    verticalEndListeners.forEach((e) =>
+      window.addEventListener("scrollend", e)
+    );
+    // init
+    verticalEndListeners.forEach((e) => e());
 
     if (nbThumbnails > 1) {
       //      document.fonts.ready.then(function () {
@@ -280,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.stopPropagation();
     flutter.onSwipeUp();
   });
-  
+
   document.scrollingElement.addEventListener("swipedown", function (event) {
     event.stopPropagation();
     flutter.onSwipeDown();

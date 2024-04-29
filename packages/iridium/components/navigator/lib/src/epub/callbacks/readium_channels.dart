@@ -20,6 +20,7 @@ class ReadiumChannels extends JavascriptChannels {
   final ReaderAnnotationRepository? _readerAnnotationRepository;
   final ViewerSettingsBloc? viewerSettingsBloc;
   final WebViewHorizontalGestureRecognizer? webViewHorizontalGestureRecognizer;
+  final WebViewVerticalGestureRecognizer? webViewVerticalGestureRecognizer;
   final WebViewListener listener;
   final Locator locator;
   late JsApi jsApi;
@@ -29,6 +30,7 @@ class ReadiumChannels extends JavascriptChannels {
       this._readerAnnotationRepository,
       this.viewerSettingsBloc,
       this.webViewHorizontalGestureRecognizer,
+      this.webViewVerticalGestureRecognizer,
       this.listener)
       : locator = Locator(
           href: _spineItemContext.spineItem.href,
@@ -51,6 +53,8 @@ class ReadiumChannels extends JavascriptChannels {
         "getViewportWidth": _getViewportWidth,
         "onLeftOverlayVisibilityChanged": _onLeftOverlayVisibilityChanged,
         "onRightOverlayVisibilityChanged": _onRightOverlayVisibilityChanged,
+        "onTopOverlayVisibilityChanged": _onTopOverlayVisibilityChanged,
+        "onBottomOverlayVisibilityChanged": _onBottomOverlayVisibilityChanged,
       };
 
   void _onPaginationChanged(List<dynamic> arguments) {
@@ -232,6 +236,20 @@ class ReadiumChannels extends JavascriptChannels {
       }
       bool visibility = arguments.first;
       webViewHorizontalGestureRecognizer?.setRightOverlayVisible(visibility);
+    }
+  }
+
+  void _onTopOverlayVisibilityChanged(List<dynamic> arguments) {
+    if (arguments.isNotEmpty) {
+      bool visibility = arguments.first;
+      webViewVerticalGestureRecognizer?.setTopOverlayVisible(visibility);
+    }
+  }
+
+  void _onBottomOverlayVisibilityChanged(List<dynamic> arguments) {
+    if (arguments.isNotEmpty) {
+      bool visibility = arguments.first;
+      webViewVerticalGestureRecognizer?.setBottomOverlayVisible(visibility);
     }
   }
 }
