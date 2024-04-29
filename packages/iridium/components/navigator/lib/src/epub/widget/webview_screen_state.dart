@@ -32,6 +32,7 @@ class WebViewScreenState extends State<WebViewScreen> {
   late CurrentSpineItemBloc _currentSpineItemBloc;
   late SpineItemContext _spineItemContext;
   late WebViewHorizontalGestureRecognizer webViewHorizontalGestureRecognizer;
+  late WebViewVerticalGestureRecognizer webViewVerticalGestureRecognizer;
   StreamSubscription<ReaderThemeState>? _readerThemeSubscription;
   StreamSubscription<ViewerSettingsState>? _viewerSettingsSubscription;
   StreamSubscription<CurrentSpineItemState>? _currentSpineItemSubscription;
@@ -45,6 +46,7 @@ class WebViewScreenState extends State<WebViewScreen> {
   late StreamSubscription<ReaderAnnotation> bookmarkSubscription;
   late StreamSubscription<List<String>> deletedAnnotationIdsSubscription;
   late StreamSubscription<int> viewportWidthSubscription;
+  late final bool verticalScroll;
 
   bool isLoaded = false;
 
@@ -90,6 +92,8 @@ class WebViewScreenState extends State<WebViewScreen> {
     _currentSpineItemBloc = BlocProvider.of<CurrentSpineItemBloc>(context);
     webViewHorizontalGestureRecognizer = WebViewHorizontalGestureRecognizer(
         chapNumber: position, link: spineItem, readerContext: readerContext);
+    webViewVerticalGestureRecognizer = WebViewVerticalGestureRecognizer(
+        chapNumber: position, link: spineItem, readerContext: readerContext);
     selectionListener =
         readerContext.selectionListenerFactory.create(readerContext, context);
     epubCallbacks = EpubCallbacks(
@@ -97,6 +101,7 @@ class WebViewScreenState extends State<WebViewScreen> {
         _viewerSettingsBloc,
         readerContext.readerAnnotationRepository,
         webViewHorizontalGestureRecognizer,
+        webViewVerticalGestureRecognizer,
         EpubWebViewListener(_spineItemContext, _viewerSettingsBloc,
             widget.publicationController,
             selectionListener: selectionListener,
@@ -136,6 +141,8 @@ class WebViewScreenState extends State<WebViewScreen> {
     });
     viewportWidthSubscription = readerContext.viewportWidthStream
         .listen((viewportWidth) => _jsApi?.setViewportWidth(viewportWidth));
+
+    verticalScroll = _readerThemeBloc.state.readerTheme.verticalScroll;
   }
 
   @override
@@ -204,8 +211,13 @@ class WebViewScreenState extends State<WebViewScreen> {
               NavigationActionPolicy.ALLOW,
           onLoadStop: _onPageFinished,
           gestureRecognizers: {
-            Factory<WebViewHorizontalGestureRecognizer>(
-                () => webViewHorizontalGestureRecognizer),
+            verticalScroll
+                ? Factory<WebViewVerticalGestureRecognizer>(
+                    () => webViewVerticalGestureRecognizer,
+                  )
+                : Factory<WebViewHorizontalGestureRecognizer>(
+                    () => webViewHorizontalGestureRecognizer,
+                  ),
             Factory<LongPressGestureRecognizer>(
                 () => LongPressGestureRecognizer()),
           },

@@ -20,6 +20,7 @@ class EpubCallbacks {
       ViewerSettingsBloc? viewerSettingsBloc,
       ReaderAnnotationRepository? bookmarkRepository,
       WebViewHorizontalGestureRecognizer? webViewHorizontalGestureRecognizer,
+      WebViewVerticalGestureRecognizer? webViewVerticalGestureRecognizer,
       WebViewListener listener)
       : _launcherUIChannels = LauncherUIChannels(),
         _readiumGesturesChannels = ReadiumChannels(
@@ -27,6 +28,7 @@ class EpubCallbacks {
             bookmarkRepository,
             viewerSettingsBloc,
             webViewHorizontalGestureRecognizer,
+            webViewVerticalGestureRecognizer,
             listener);
 
   Map<String, HandlerCallback> get channels => {

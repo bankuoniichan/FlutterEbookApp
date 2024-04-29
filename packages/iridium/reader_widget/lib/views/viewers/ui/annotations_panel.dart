@@ -37,6 +37,11 @@ class AnnotationsPanelState extends State<AnnotationsPanel> {
     String? title =
         (locator?.title?.isNotEmpty == true) ? locator?.title : null;
     String? text = locator?.text.highlight;
+
+    if (text != null && text.length > 50) {
+      text = text.substring(0, 50) + '...';
+    }
+
     return Material(
       child: ListTile(
         title: Text(title ?? text ?? readerAnnotation.id),

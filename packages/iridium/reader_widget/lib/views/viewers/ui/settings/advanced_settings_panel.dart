@@ -52,9 +52,9 @@ class _AdvancedSettingsPanelState extends State<AdvancedSettingsPanel> {
   Widget _buildTextAlignmentRow(ReaderThemeState state) => Row(
         children: [
           TextAlign.left,
-          TextAlign.justify,
+          TextAlign.center,
           TextAlign.right,
-          TextAlign.center
+          TextAlign.justify,
         ]
             .map((textAlign) => Expanded(
                   child: AlignmentButton(
