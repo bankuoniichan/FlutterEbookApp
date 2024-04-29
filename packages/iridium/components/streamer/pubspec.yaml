@@ -5,7 +5,7 @@ homepage: https://github.com/Mantano/mno_streamer_dart
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   dartx: ^1.1.0
@@ -17,12 +17,12 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/commons
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/shared
   path: ^1.8.3
 

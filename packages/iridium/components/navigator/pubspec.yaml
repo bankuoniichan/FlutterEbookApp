@@ -5,8 +5,8 @@ homepage: https://github.com/Mantano/iridium
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
@@ -27,27 +27,27 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/commons
   mno_server:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/server
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/shared
   mno_streamer:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/streamer
   mno_webview:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.4"
+      ref: "pub-0.0.6"
       path: packages/iridium/components/webview
 
 dev_dependencies:
