@@ -27,27 +27,27 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.6"
+      ref: "pub-0.0.7"
       path: packages/iridium/components/commons
   mno_server:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.6"
+      ref: "pub-0.0.7"
       path: packages/iridium/components/server
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.6"
+      ref: "pub-0.0.7"
       path: packages/iridium/components/shared
   mno_streamer:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.6"
+      ref: "pub-0.0.7"
       path: packages/iridium/components/streamer
   mno_webview:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.6"
+      ref: "pub-0.0.7"
       path: packages/iridium/components/webview
 
 dev_dependencies:
