@@ -61,7 +61,7 @@ class HighlightPopup extends SelectionPopup {
             color: color,
             shape: BoxShape.circle,
           ),
-          size: 36,
+          width: 36,
           height: 36,
         ),
       );
