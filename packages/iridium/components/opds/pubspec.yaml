@@ -17,12 +17,12 @@ dependencies:
   mno_commons:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.8"
+      ref: "pub-0.0.9"
       path: packages/iridium/components/commons
   mno_shared:
     git:
       url: https://github.com/bankuoniichan/FlutterEbookApp.git
-      ref: "pub-0.0.8"
+      ref: "pub-0.0.9"
       path: packages/iridium/components/shared
 
 dev_dependencies:
